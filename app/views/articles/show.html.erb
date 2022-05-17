@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h2 class="border-bottom py-2"><%= @article.title %>
+  <small>
+    <%= link_to edit_article_path(@article) do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+    <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+  </small>
+</h2>
+<p>
+  <%= @article.content %>
+</p>
+
+<div>
+  <%= link_to "Back to articles", articles_path %>
+</div>
